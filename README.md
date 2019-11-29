@@ -13,7 +13,7 @@ Tested on Chrome and Firefox, for local development the latest Firefox blocks SV
 Due to the bleeding edge CSS features utilized it is not a goal of this project to have widespread browser compatibility, therefore the development target is the latest Chrome and Firefox browser. Chrome has sharper results when performing CSS transforms so is recommended for best visual quality.
 
 Features
-- Rows and column based layout system
+- Row and column based layout system
 - X and Y offset
 - Space (convex) key
 - Flipped key
