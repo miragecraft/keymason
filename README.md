@@ -12,7 +12,7 @@ Tested on Chrome and Firefox, for local development the latest Firefox blocks SV
 
 Due to the bleeding edge CSS features utilized it is not a goal of this project to have widespread browser compatibility, therefore the development target is the latest Chrome and Firefox browser. Chrome has sharper results when performing CSS transforms so is recommended for best visual quality.
 
-Features
+**Features**
 - Row and column based layout system
 - X and Y offset
 - Space (convex) key
@@ -27,5 +27,5 @@ Features
 - Basic SVG icons
 - Outline based highlighting for potential use as an editor interface
 
-Limitations
+**Limitations**
 - Susceptible to pixel rounding errors when zooming.
