@@ -61,7 +61,9 @@
 .blueprint .iso-enter k-corner {
   border-top:var(--accent) solid var(--lightest);
 }
-.blueprint k-legend {text-shadow:none;filter:none}
+.blueprint k-legend {text-shadow:none}
+.blueprint k-legend.front {filter:none}
+
 .blueprint k-note {color:var(--legend)}
 .blueprint .stepped:after {border-style:dotted}
 .blueprint .stepped k-cap:before {border: 1px dotted var(--lighter); border-top:0; border-bottom:0; border-radius:var(--r-top)}
