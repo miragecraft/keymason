@@ -106,4 +106,4 @@ The nested `<k-cap>` has a default width based on outer `<k-cap>` width, based o
 ```
 ### Big-Enter (Big Ass Enter)
 
-<to be continued>
+`<to be continued...>`
