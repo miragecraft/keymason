@@ -1,3 +1,7 @@
+/*  KeyMason
+    https://www.miragecraft.com
+    Licensed under MIT Open Source */
+
 @import "base.css";
 @import "special.css";
 @import "theme.css";
@@ -10,11 +14,6 @@
 @font-face {
   font-family:Metro;
   src:url(fonts/Metropolis-Regular.woff2);
-}
-
-@font-face {
-  font-family:GMK; font-weight:bold;
-  src:url(fonts/GMK_font.ttf);
 }
 
 @font-face {
