@@ -1,0 +1,223 @@
+/* Z-index Order */
+k-homing,
+k-window {z-index:1}
+k-legend {z-index:2}
+
+/* Absolute Position Mode */
+.anchor {z-index:2;position:relative;}
+.anchor > * {position:absolute;}
+
+/* Key Homing */
+k-homing {grid-column: 2; grid-row:2;}
+k-homing.bar {
+  place-self:end center; width:33%; margin-bottom:10%;
+  border-top:2px solid var(--lightest);
+  border-bottom: 2px solid var(--darkest);
+}
+k-homing.dot {
+  place-self:center; width:3px;
+  border-top:3px solid var(--lightest);
+  border-bottom: 2px solid var(--darkest);
+}
+k-homing.dish {
+  border-radius: var(--r-top);
+  background: radial-gradient(at center, var(--base) 40%, var(--darkest));
+}
+k-homing.scoop {
+  border-radius: var(--r-top);
+  background: linear-gradient(to right,  var(--darkest), var(--base), var(--base), var(--darkest));
+}
+
+/* Key Window */
+k-window {
+  --led:var(--window,#888);
+  grid-column:2;
+  grid-row:3;
+  place-self:end center;
+  width:calc(var(--u)/6.5);
+  margin-bottom:1px;
+  border-radius:2px;
+  overflow:hidden;
+  position:relative;
+  filter:brightness(1.1);
+}
+k-window:before {
+  height:calc(var(--u)/7.5);
+  margin-bottom:2px;
+  filter:brightness(.8)
+}
+
+k-window:after {
+  height:calc(var(--b-bottom) - 1px);
+  filter:brightness(.75)
+}
+
+k-window, k-window:before, k-window:after {content:""; display:block; background:var(--led)}
+
+k-window.red {--led:OrangeRed}
+k-window.green {--led:LawnGreen}
+k-window.blue {--led:DeepSkyBlue}
+k-window.gold {--led:Gold}
+
+/* Flipped Key */
+k-cap.flipped,
+k-cap.flipped:after,
+k-cap.flipped > *:after {transform:rotate(180deg); transform-origin:center;}
+k-cap.flipped:before,
+k-cap.flipped > *:before {border-top-color:var(--darkest); border-bottom-color:var(--dark)}
+
+/* Space (Convex) Key */
+k-cap.space:after {background: linear-gradient(to top, var(--dark),  var(--base)) var(--dark)}
+
+/* Stepped Key */
+k-cap.stepped {
+  --s-top: calc(var(--accent)*-1 - 1px);
+  --s-side: calc(var(--accent)*-1 - 2px);
+  --s-bottom: -3px;
+}
+k-cap.stepped.deep {
+  --s-top: -4px;
+  --s-side: -7px;
+  --s-bottom: -6px;
+}
+k-cap.stepped:after {
+  background-color: var(--dark);
+  border-color: var(--lighter);
+  margin: var(--s-top) var(--s-side) var(--s-bottom);
+}
+k-cap.stepped k-cap {position:absolute; --w:var(--step, 1.25); background:none; outline:none; margin:0}
+k-cap.stepped k-cap:before {
+  margin: 
+    calc(var(--b-top) + var(--s-top))
+    var(--b-side)
+    calc(var(--b-bottom) + var(--s-bottom));
+}
+k-cap.stepped:not(.right):not(.center):after {margin-left:0}
+k-cap.stepped:not(.right):not(.center) k-cap:before {border-left:0;margin-right:0}
+
+k-cap.stepped.right k-cap {right:0;}
+k-cap.stepped.right k-cap:before {border-right:0;margin-left:0}
+k-cap.stepped.right:after {margin-right:0}
+
+k-cap.stepped.center k-cap {left: 0;right: 0;margin: auto}
+k-cap.stepped.center k-cap:before {margin-left:0; margin-right:0}
+
+/* Composite Keys (L-shape) */
+
+/* ISO Enter */
+k-cap.iso-enter {--w:1.5}
+k-cap.iso-enter k-cap:nth-of-type(1) {
+  --h:2; --w:1.25;
+  right:0;margin:0;
+}
+
+k-cap.iso-enter k-cap:nth-of-type(1),
+k-cap.iso-enter k-cap:nth-of-type(1):before,
+k-cap.iso-enter k-cap:nth-of-type(1):after {
+  border-top-left-radius: 0;
+}
+
+k-cap.iso-enter > * {position:absolute}
+
+k-cap.iso-enter k-cap:nth-of-type(2) {
+  --w:.25;
+  width:calc(var(--u)*var(--w, 1) + var(--padding) + var(--b-side));
+  padding-right:0;
+  outline:none;
+}
+
+k-cap.iso-enter k-cap:nth-of-type(2):before {border-right:0;}
+k-cap.iso-enter k-cap:nth-of-type(2):after {border-right:0;grid-column:2/-1}
+
+k-cap.iso-enter k-cap:nth-of-type(2),
+k-cap.iso-enter k-cap:nth-of-type(2):before,
+k-cap.iso-enter k-cap:nth-of-type(2):after {
+border-top-right-radius: 0; border-bottom-right-radius: 0;
+}
+
+k-cap.iso-enter k-corner {
+  position:absolute; right:0; bottom:0;
+  border-right: var(--accent) solid var(--lightest);
+  border-top-right-radius: var(--r-top);
+  box-shadow: 2px -2px 0 0 var(--base);
+  overflow:hidden;
+}
+
+k-cap.iso-enter k-corner:before,
+k-cap.iso-enter k-corner:after {content:""}
+
+k-cap.iso-enter k-corner:before {
+  border-right:calc(var(--b-side) + var(--padding)) solid var(--darker);
+  border-top:calc(var(--b-bottom) + var(--padding)) solid var(--darkest);
+  margin-right:calc(var(--accent)*-1);
+  display:block;
+}
+
+k-cap.iso-enter k-corner:after {
+  border: var(--padding) solid var(--shadow);
+  border-left:0; border-bottom:0;
+  border-top-right-radius: var(--r-base);
+  bottom:0; left:0;
+  position:absolute;
+}
+
+/* Big Enter */
+k-cap.big-enter {--w:1.5; --h:2}
+
+  /* Slim Ass Enter */
+  k-cap.big-enter.slim {--w:1; --h:2}
+  k-cap.big-enter.slim k-cap:nth-of-type(1) {--w:1.75}
+
+k-cap.big-enter > * {position:absolute}
+
+k-cap.big-enter k-cap:nth-of-type(1) {
+  --h:1; --w:2.25;
+  right:0;
+  bottom:0;
+  margin:0;
+}
+k-cap.big-enter k-cap:nth-of-type(1),
+k-cap.big-enter k-cap:nth-of-type(1):before,
+k-cap.big-enter k-cap:nth-of-type(1):after {
+  border-top-right-radius: 0;
+}
+
+k-cap.big-enter k-cap:nth-of-type(2) {
+  --h:1;
+  height:calc(var(--u)*var(--h, 1) + var(--padding) + var(--b-top));
+  padding-bottom:0;
+  outline:none;
+}
+k-cap.big-enter k-cap:nth-of-type(2):before {border-bottom:0;}
+k-cap.big-enter k-cap:nth-of-type(2):after {border-bottom:0;grid-row:2/-1}
+
+k-cap.big-enter k-cap:nth-of-type(2),
+k-cap.big-enter k-cap:nth-of-type(2):before,
+k-cap.big-enter k-cap:nth-of-type(2):after {
+border-bottom-left-radius: 0; border-bottom-right-radius: 0;
+}
+
+k-cap.big-enter k-corner {
+  position:absolute; bottom:0; left:0; overflow:hidden;
+  border: var(--accent) solid var(--lightest);
+  border-left:0; border-top:0;
+  border-bottom-right-radius: var(--r-top);
+  box-shadow: 2px 2px 0 0 var(--base);
+}
+
+k-cap.big-enter k-corner:before,
+k-cap.big-enter k-corner:after {content:""}
+
+k-cap.big-enter k-corner:before {
+  display:block;
+  border-right:calc(var(--b-side) + var(--padding)) solid var(--darker);
+  border-bottom:calc(var(--b-top) + var(--padding)) solid var(--dark);
+  margin-right:calc(var(--accent)*-1);
+  margin-bottom:calc(var(--accent)*-1);
+}
+k-cap.big-enter k-corner:after {
+  position:absolute; top:0; left:0;
+  border: var(--padding) solid var(--shadow);
+  border-left:0; border-top:0;
+  border-bottom-right-radius: var(--r-base);
+}

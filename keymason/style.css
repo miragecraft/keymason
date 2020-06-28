@@ -1,0 +1,80 @@
+@import "base.css";
+@import "special.css";
+@import "theme.css";
+
+@font-face {
+  font-family:Inter; font-weight:bold;
+  src:url(fonts/Inter-Bold.woff2);
+}
+
+@font-face {
+  font-family:Metro;
+  src:url(fonts/Metropolis-Regular.woff2);
+}
+
+@font-face {
+  font-family:GMK; font-weight:bold;
+  src:url(fonts/GMK_font.ttf);
+}
+
+@font-face {
+  font-family:FreeSans; font-weight:bold;
+  src:url(fonts/FreeSansBold.woff);
+}
+
+@font-face {
+  font-family:NimbusSansL;  font-weight:bold;
+  src:url(fonts/NimbusSanL-Bol-webfont.woff);
+}
+
+@font-face {
+  font-family:Heros;  font-weight:bold;
+  src:url(fonts/texgyreheros-bold-webfont.woff);
+}
+
+@font-face {
+  font-family:Traffic;  font-weight:bold;
+  src:url('fonts/XM Traffic Bd.ttf');
+}
+
+html:before {
+  background: #ffc;   
+  padding: .5rem .8rem;    
+  font-size:.8rem;      
+  display:block;
+  font-weight:bold;
+  content: "\02139  Adjust your zoom level to avoid pixel rounding errors";
+  "026A0""02139"
+}
+
+@media (resolution: 1dppx), (resolution: 2dppx), (resolution: 3dppx), (resolution: 4dppx) {
+  html:before {
+    display:none;
+  }
+}
+
+#keyboard {
+  --grid-line:#ddd;
+  --grid-bg:#eee;
+  background:
+    repeating-linear-gradient(var(--grid-line) 0, var(--grid-line) var(--gutter), transparent var(--gutter), transparent calc(var(--u)/4)),
+    repeating-linear-gradient(to right, var(--grid-line) 0, var(--grid-line) var(--gutter), transparent var(--gutter), transparent calc(var(--u)/4)) var(--grid-bg);
+  padding: calc(var(--u)/4);
+  min-width:min-content;
+}
+
+.frame {
+  margin-top:5px;
+  padding:7px;
+  padding-right:calc(7px + 3px);
+  padding-bottom:calc(7px + 3px);
+  border-radius:8px;
+  background:#ddd;
+  border-color: #eee #ccc #bbb;
+  background:#444;
+  border-color: #333 #222 #111;
+  border-style:solid;
+  border-width:3px;
+  width:min-content;
+}
+

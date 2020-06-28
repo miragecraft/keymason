@@ -1,0 +1,238 @@
+/* Colorway */
+
+.brick .mod {
+  --legend: #fff3f0;
+  --base: #f66030;
+  --lightest: #ff9876;
+  --lighter: #ff8259;
+  --dark: #e0582d;
+  --darker: #c84b22;
+  --darkest: #ad411f;
+}
+
+.geek {
+  --legend: #ff7f00;
+  --base: #636363;
+  --lightest:#757575;
+  --lighter: #6b6b6b;
+  --dark: #525252; 
+  --darker: #494949;
+  --darkest: #414141;
+  --shadow: #111;
+}
+
+.geek .mod {
+  --legend: #ff7f00;
+  --base: #383838;
+  --lightest: #4e4e4e;
+  --lighter: #444444;
+  --dark: #373737; 
+  --darker: #333333;
+  --darkest: #292929;
+}
+
+.nuclear {
+  --legend: #ffffff;
+  --base: #3ea33e;
+  --lightest:#5dbb5d;
+  --lighter: #4eb04e;
+  --dark: #3b8c3b; 
+  --darker: #357b35;
+  --darkest: #2e672e;
+  --shadow: #222;
+}
+
+.nuclear .mod {
+  --base: #ec8101;
+  --lightest:#ffad4c;
+  --lighter: #f89e32;
+  --dark: #e67d00; 
+  --darker: #c86d00;
+  --darkest: #aa5d00;
+}
+
+.dolch {
+  --legend: #ffffff;
+  --base: #7E7B6B;
+  --lightest:#94907b;
+  --lighter: #8a8774;
+  --dark: #6a685d; 
+  --darker: #605d4e;
+  --darkest: #494841;
+  --shadow: #222;
+}
+
+.dolch .mod {
+  --base: #565552;
+  --lightest:#736f67;
+  --lighter: #615f58;
+  --dark: #52524d; 
+  --darker: #474642;
+  --darkest: #353431;
+}
+
+.penumbra {
+  --legend: #464f58;
+  --base: #ddd;
+  --lightest:#efefef;
+  --lighter: #f0f0f0;
+  --dark: #d2ceca; 
+  --darker: #c3bfba;
+  --darkest: #a5a09a;
+  --shadow: #222;
+}
+
+.penumbra .mod {
+  --legend: #c0d8e2;
+  --base: #405f78;
+  --lightest:#66849b;
+  --lighter: #57758b;
+  --dark: #38576e; 
+  --darker: #304a5e;
+  --darkest: #223645;
+}
+
+.miami {
+  --legend: #FA67AE;
+  --base: #4FD5D5;
+  --lightest:#88f2f2;
+  --lighter: #60e3e3;
+  --dark: #54c7c7; 
+  --darker: #33aaaa;
+  --darkest: #399a9a;
+  --shadow: #222;
+}
+
+.miami .mod {
+    --legend: #4FD5D5;
+  --base: #FA67AE;
+  --lightest:#ffaad3;
+  --lighter: #fa83bc;
+  --dark: #ea569e; 
+  --darker: #c94d89;
+  --darkest: #b34178;
+}
+
+.hyperfuse {
+  --legend: #753984;
+  --base: #CDCDCD;
+  --lightest: #e5e5e5;
+  --lighter: #dadada;
+  --dark: #bbbbbb; 
+  --darker: #AAA9AA;
+  --darkest: #9D9D9D;
+  --shadow: #333;
+}
+
+.hyperfuse .mod {
+  --legend: #8ef2df;
+  --base: #707b7d;
+  --lightest:#909b9d;
+  --lighter: #899294;
+  --dark: #6b7375; 
+  --darker: #586162;
+  --darkest: #495456;
+  --shadow: #111;
+}
+
+.terminal {
+  --legend: #a0ce36;
+  --base: #383838;
+  --lightest: #4e4e4e;
+  --lighter: #444;
+  --dark: #373737; 
+  --darker: #313131;
+  --darkest: #262626;
+  --shadow: #111;
+}
+
+.terminal .mod {
+  --legend: #383838;
+  --base: #a0ce36;
+  --lightest: #c0e66b;
+  --lighter: #aed84d;
+  --dark: #8fb92d; 
+  --darker: #7aa21c;
+  --darkest: #678a16;
+}
+
+.industry {
+  --legend: #394247;
+  --base: #d1d5d8;
+  --lightest:#f0f3f5;
+  --lighter: #e3e6e8;
+  --dark: #bbbfc2; 
+  --darker: #a8afb5;
+  --darkest: #8c949a;
+  --shadow: #111;
+}
+
+.industry .mod {
+  --legend: #c6cacb;
+  --base: #404751;
+  --lightest: #5b646f;
+  --lighter: #505862;
+  --dark: #3e454b; 
+  --darker: #2e3337;
+  --darkest: #16191e;
+}
+
+.industry .mod.alt {
+  --legend: #394247;
+  --base: #f3d513;
+  --lightest: #ffeb6b;
+  --lighter: #ffe53c;
+  --dark: #dac32e; 
+  --darker: #cbb420;
+  --darkest: #b19c11;
+}
+
+.nines {
+  --legend: rgb(185, 186, 180);
+  --base: #4c4c4c;
+  --lightest:#666;
+  --lighter: #555;
+  --dark: #444444; 
+  --darker: #393939;
+  --darkest: #333;
+  --shadow: #111;
+}
+.nines .mod {
+  --legend: #414141;
+  --base: rgb(185, 186, 180);
+  --lightest: hsla(70, 4%, 85%, 1);
+  --lighter: hsla(70, 4%, 78%, 1);
+  --dark: hsla(70, 4%, 65%, 1); 
+  --darker: hsla(70, 4%, 60%, 1);
+  --darkest: hsla(70, 4%, 50%, 1);
+}
+
+.denim {
+  --legend: #c7baa0;
+  --base: #65748f;
+  --lightest:#828da0;
+  --lighter: #8091af;
+  --dark: #5b677b; 
+  --darker: #535c6f;
+  --darkest: #465065;
+  --shadow: #111;
+}
+.denim .mod {
+  --legend: #c7baa0;
+  --base: #484e5d;
+  --lightest:#5f6679;
+  --lighter:#535b6f;
+  --dark:#464b58; 
+  --darker: #414652;
+  --darkest:#363a46;
+}
+
+.denim .mod.alt {
+  --legend: #9b2f1e;
+  --base: #ad855d;
+  --lightest:#cda47b;
+  --lighter:#bf9368;
+  --dark:#9a7a5a; 
+  --darker: #9c7c5b;
+  --darkest:#8c6a48;
+}
