@@ -36,6 +36,46 @@ KeyMason makes extensive use of inline styles in order to assign value to custom
 
 All custom properties for length are based on keycap size, so value of "1" means 1 keycap long.
 
+## Default Custom Properties
+
+Default custom properties used to draw the keycaps.
+
+  - `--u` is the key size, used for width, height and various offset values.
+  - `--gutter` is the distance between keycaps.
+  - `--accent` is the thickness of the key highlight.
+  - `--b-top`, `--b-side`, `--b-bottom` are the values used for the 3D effect of the keys.
+  - `--r-base` is the corner radius of the key base, and `--r-top` is the corner radius of the key top.
+
+A set of default colors are included for development purposes.
+
+```
+:root {
+  --u: 60px;
+  --gutter: 3px;
+  --accent: 2px;
+  
+  /* Cherry profile */
+  --b-top:4px;
+  --b-side:10px;
+  --b-bottom:10px;
+  --r-base: 2px;
+  --r-top: 4px;
+
+  /* default colors */
+  --legend: #3e3e3e;
+  --base: #CDCDCD;
+  --lightest: #efe8e8;
+  --lighter: #dadada;
+  --dark: #bbbbbb; 
+  --darker: #AAA9AA;
+  --darkest: #9D9D9D;
+  --shadow: #474747;
+}
+```
+
+A `theme.css` file is included with some different preset of color themes.
+
+
 ## General Layout
 
 General layout is done using `<k-row>`, `<k-column>` and `<k-cap>`, for each of those elements, you can adjust the following custom properties:
@@ -71,39 +111,137 @@ For the `<k-cap>` element you can:
 
 For the `<k-legend>` element you can:
   - adjust position using the following class names: `top`, `bottom`, `left`, `right`, `center`, `front`.
-  - adjust size using the following class names: `medium`, `small` (default is big size, you can still add `big` class, it just doesn't do anything)
+  - adjust size using the following class names: `medium`, `small` (default is large size, you can still add `large` class, it just doesn't do anything)
   
 ## Special Keys
 
 Several special keys are available:
 
+### Space
+
+Using `space` class to create a space key, it adds a gradient on top for that convex look.
+
 ### Flipped
 
 You can flip a key by applying the `flipped` class to the `<k-cap>` element.
 
-A flipped 7u spacebar: `<k-cap class="flipped 7"></k-cap>`
-A flipped 6.25u spacebar using `--w`: `<k-cap class="flipped" style="--w:6.25"></k-cap>`
+A flipped 7u spacebar: `<k-cap class="space flipped 7"></k-cap>`
+
+A flipped 6.25u spacebar using `--w`: `<k-cap class="space flipped" style="--w:6.25"></k-cap>`
 
 ### Stepped
 ```
-<k-cap class="stepped" style="--w:1.75">
-		<k-cap>
-			<k-legend class="small">Caps<br>Lock</k-legend>
-		</k-cap>
+<k-cap class="stepped">
+	<k-cap>
+		<k-legend class="small">Caps<br>Lock</k-legend>
+	</k-cap>
 </k-cap>
 ```
-Stepped key are declared by using class name `stepped` and nest two `<k-cap>` elements.
+Stepped key are declared by using class name `stepped` and nest two `<k-cap>` elements, defaults to 1.75u base (`--w:1.75`) and 1.25u step (`--step:1.25`).
 
-You must declare a width for stepped key (either using shortcut classname or `--w` custom property) because there exists several variants.
+Class names `right` and `center` are used to change the alignment of the step top. Left is the default, you can add `left` class for consistency sake but it's not necessary.
 
-The nested `<k-cap>` has a default width based on outer `<k-cap>` width, based on the normal capslock key, you can override this by applying your own `--w` value, such as 1u:
+You can create a "deep" stepped key using the `deep` class.
 ```
-<k-cap class="stepped" style="--w:1.75">
-		<k-cap style="--w:1">
-			<k-legend class="small">Caps<br>Lock</k-legend>
-		</k-cap>
+<k-cap class="stepped deep" style="--w:3;--step:2"> <!-- deep stepped key with base size 3u and step size 2u -->
+	<k-cap>
+		<k-legend class="small">Caps<br>Lock</k-legend>
+	</k-cap>
 </k-cap>
 ```
-### Big-Enter (Big Ass Enter)
+### ISO Enter
 
-`<to be continued...>`
+ISO enter key can be created using the `iso-enter` class and the following element structure:
+```
+<k-cap class="iso-enter">
+	<k-cap>
+		<k-legend class="small center"><k-icon class="enter-tall"><i></i></k-icon></k-legend>
+	</k-cap>
+	<k-cap><k-corner></k-corner></k-cap>
+</k-cap>
+```
+This key is created using two separate keys combined into one, a horizontal key (root `<k-cap>` element) and a vertical key (first nested `<k-cap>` element).
+
+You can place the `<k-legend>` element in either one of them in order to align the legend to either the vertical segment of the key, or the horizontal segment of the key.
+```
+<k-cap class="iso-enter">
+	<k-legend class="small center"><k-icon class="enter-tall"><i></i></k-icon></k-legend>
+	<k-cap></k-cap>
+	<k-cap><k-corner></k-corner></k-cap>
+</k-cap>
+```
+
+### Big Enter (Big Ass Enter)
+
+Big (ass) enter can be created using the `big-enter` class and the following element structure:
+```
+<k-cap class="big-enter">
+	<k-cap>
+		<k-legend class="small left"><k-icon class="enter"><i></i></k-icon>&nbsp;Enter</k-legend>
+	</k-cap>
+	<k-cap><k-corner></k-corner></k-cap>
+</k-cap>
+```
+This key is created using two separate keys combined into one, a vertical key (root `<k-cap>` element) and a horizontal key (first nested `<k-cap>` element).
+
+You can place the `<k-legend>` element in either one of them in order to align the legend to either the vertical segment of the key, or the horizontal segment of the key.
+```
+<k-cap class="big-enter">
+	<k-legend class="small left"><k-icon class="enter"><i></i></k-icon>&nbsp;Enter</k-legend>
+	<k-cap></k-cap>
+	<k-cap><k-corner></k-corner></k-cap>
+</k-cap>
+```
+
+### Big Enter Slim
+
+This is the slim variant of the big ass enter, it shows up on some old keyboards, added just for completeness sake.
+
+Add the `slim` class to `big-enter` to use, it simply changes the width of key.
+
+## Special Elements
+
+### Homing Device
+
+`<k-homing>` element is used to display homing features, using class `bar`, `dot`, `dish` and `scoop`.
+```
+<k-cap>
+	<k-legend class="top left">F</k-legend>
+	<k-homing class="bar"></k-homing>
+</k-cap>
+```
+
+### Key Window
+
+`<k-window>` element is used to create a key window, defaults to unlit.
+```
+<k-cap>
+	<k-legend class="small">F9</k-legend>
+	<k-window></k-window>
+</k-cap>
+```
+Custom property `--led` is used to light it up with color, some class names are provided with preset values: `red`, `green`, `blue` and `gold`.
+
+## Icons
+
+A basic SVG icon system is included, the syntax is `<k-icon class="tab"><i></i></k-icon>`.
+
+The following icons are provided - `tab`, `win`, `menu`, `capslock`, `backspace`, `backspace-x`, `enter`, `enter-long`, `enter-tall`, `shift`, and `arrow`.
+
+For the `arrow` icon, you can rotate it using `up`, `down`, and `right` class such as `<k-icon class="arrow up"><i></i></k-icon>`, default direction is left.
+
+## Special features
+
+### Selectable
+
+Add the `seletable` class to an outer wrapper enable key highlighting on hover, can be used to build user interface.
+
+### Blue Print
+
+Add the `blueprint` class to to trigger a special blueprint display mode which uses legend color to draw outlines of the keys.
+
+### Anchor
+
+Add `anchor` class to any `<k-row>`, `<k-column>` and `<k-cap>` element will make it absolutely positioned.
+
+What this means is that now you can move the key around without affecting the layout of subsequent keys, useful for some special layouts such as curved keys.
