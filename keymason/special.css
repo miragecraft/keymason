@@ -1,5 +1,5 @@
 /*  KeyMason
-    https://www.miragecraft.com
+    http://www.miragecraft.com
     Licensed under MIT Open Source */
 
 /* Z-index Order */
@@ -75,6 +75,7 @@ k-cap.space:after {background: linear-gradient(to top, var(--dark),  var(--base)
 
 /* Stepped Key */
 k-cap.stepped {
+  --w:1.75;
   --s-top: calc(var(--accent)*-1 - 1px);
   --s-side: calc(var(--accent)*-1 - 2px);
   --s-bottom: -3px;
