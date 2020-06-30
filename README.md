@@ -240,7 +240,7 @@ You can create your own icon easily by simply drawing black outline, save as an 
 
 Add the `seletable` class to an outer wrapper enable key highlighting on hover, can be used to build user interface.
 
-### Blue Print
+### Blueprint
 
 Add the `blueprint` class to to trigger a special blueprint display mode which uses legend color to draw outlines of the keys.
 
