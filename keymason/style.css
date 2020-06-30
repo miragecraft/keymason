@@ -59,7 +59,7 @@ html:before {
     repeating-linear-gradient(var(--grid-line) 0, var(--grid-line) var(--gutter), transparent var(--gutter), transparent calc(var(--u)/4)),
     repeating-linear-gradient(to right, var(--grid-line) 0, var(--grid-line) var(--gutter), transparent var(--gutter), transparent calc(var(--u)/4)) var(--grid-bg);
   padding: calc(var(--u)/4);
-  min-width:min-content;
+  width:min-content;
 }
 
 .frame {
