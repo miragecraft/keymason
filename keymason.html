@@ -31,6 +31,10 @@ $( document ).ready(function() {
 	html {font-family: Helvetica, Arial;}
 	label {cursor:pointer}
 	h1,h2 {display:inline-block;}
+	#keyboard {
+		padding-right:calc(var(--u) + var(--gutter));
+  		padding-bottom:calc(var(--u)/2 + var(--gutter));
+  	}
 </style>
 </head><body>
 <h1>KeyMason</h1> /
@@ -561,7 +565,7 @@ $( document ).ready(function() {
 </k-column>
 
 
-<k-row style="--r:10; --x:2">
+<k-row style="--r:10; --x:1.5">
 <k-column style="--y:.5">
 	<k-cap><k-legend class="top left">Q</k-legend></k-cap>
 	<k-cap><k-legend class="top left">A</k-legend></k-cap>
