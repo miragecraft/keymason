@@ -226,11 +226,13 @@ Custom property `--led` is used to light it up with color, some class names are 
 
 ## Icons
 
-A basic SVG icon system is included, the syntax is `<k-icon class="tab"><i></i></k-icon>`.
+A basic SVG icon system is included, the syntax is `<k-icon class="tab"></k-icon>`.
 
 The following icons are provided - `tab`, `win`, `menu`, `capslock`, `backspace`, `backspace-x`, `enter`, `enter-long`, `enter-tall`, `shift`, and `arrow`.
 
-For the `arrow` icon, you can rotate it using `up`, `down`, and `right` class such as `<k-icon class="arrow up"><i></i></k-icon>`, default direction is left.
+For the `arrow` icon, you can rotate it using `up`, `down`, and `right` class such as `<k-icon class="arrow up"></k-icon>`, default direction is left.
+
+You can create your own icon easily by simply drawing black outline, save as an SVG file in the icons folder and then add it to the CSS. `--iw` is the icon width, and `--ih` is the height which is defined as a multiplier (default to 1 resulting in square shaped icon).
 
 ## Special features
 
