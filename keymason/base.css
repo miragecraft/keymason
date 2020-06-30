@@ -210,15 +210,9 @@ k-icon {
   -webkit-mask:var(--mask); mask:var(--mask);
   background:var(--legend);
 }
-
-k-icon i {content:var(--icon);visibility:hidden; width:var(--iw)}
-
-/* Aspect Ratio
 k-icon:before {content:""; display:inline-block; width:var(--iw); padding-top:calc(var(--ih,1)*100%);}
-k-icon.tab {--icon:url(../icons/tab.svg);--iw: 18px;--ih:0.5;}
-k-icon.tab:nth-of-type(2) {transform:scaleX(-1)}*/
 
-k-icon.tab {--icon:url(icons/tab.svg);--iw: 18px}
+k-icon.tab {--icon:url(icons/tab.svg);--iw: 18px;--ih:0.5;}
 k-icon.tab:nth-of-type(2) {transform:scaleX(-1)}
 
 k-icon.win {--icon:url(icons/win.svg);--iw: 16px}
@@ -229,14 +223,13 @@ k-icon.capslock {--icon:url(icons/capslock.svg);--iw: 18px}
 k-icon.backspace {--icon:url(icons/backspace.svg);--iw:10px}
 k-icon.backspace-x {--icon:url(icons/backspace-x.svg);--iw:30px; margin-left:-5px;}
 
-k-icon.enter {--icon:url(icons/enter.svg); --iw:27px}
+k-icon.enter {--icon:url(icons/enter.svg); --iw:27px;--ih:.4}
 k-icon.enter-long {--icon:url(icons/enter-long.svg); --iw:51px;}
-k-icon.enter-tall {--icon:url(icons/enter-tall.svg); --iw:18px; margin-left:-3px;}
+k-icon.enter-tall {--icon:url(icons/enter-tall.svg); --iw:18px; --ih:2;margin-left:-3px;}
 
 k-icon.shift {--icon:url(icons/shift.svg); --iw:20px}
 
 k-icon.arrow {--icon:url(icons/arrow.svg); --iw:18px}
-k-icon.arrow i {vertical-align:baseline}
 k-icon.arrow.up    {transform:rotate(90deg);vertical-align:text-top}
 k-icon.arrow.down  {transform:rotate(90deg) scaleX(-1);vertical-align:text-top}
 k-icon.arrow.right {transform:rotate(180deg)}
