@@ -249,3 +249,7 @@ Add the `blueprint` class to to trigger a special blueprint display mode which u
 Add `anchor` class to any `<k-row>`, `<k-column>` and `<k-cap>` element will make it absolutely positioned.
 
 What this means is that now you can move the key around without affecting the layout of subsequent keys, useful for some special layouts such as curved keys.
+
+### Notes
+
+The `<k-note>` element acts like `<k-cap>` in terms of positioning, but is style-less otherwise. This lets you add text such as row number (R1, R2...) using the very same `<k-legend>` element, while having all the positioning tools at your disposal.
