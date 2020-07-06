@@ -248,9 +248,11 @@ Add the `.blueprint` class to to trigger a special blueprint display mode which 
 
 ### Anchor
 
-Add `.anchor` class to any `<k-row>`, `<k-column>` and `<k-cap>` element will make it absolutely positioned.
+Add `.anchor` to any element will make all direct children absolutely positioned.
 
 What this means is that now you can move the key around without affecting the layout of subsequent keys, useful for some special layouts such as curved keys.
+
+Also useful for laying out keys in a machine friendly way. The `--x` and `--y` offsets become x and y coordinates.
 
 ### Notes
 
