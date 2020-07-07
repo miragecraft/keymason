@@ -31,12 +31,16 @@ $( document ).ready(function() {
 	html {font-family: Helvetica, Arial;}
 	label {cursor:pointer}
 	h1,h2 {display:inline-block;}
+	header {position:sticky; top:0; background:white; z-index:99; padding:.3rem;}
 	#keyboard {
 		padding-right:calc(var(--u) + var(--gutter));
   		padding-bottom:calc(var(--u)/2 + var(--gutter));
   	}
+  	#keyboard > k-note {--b-side:0px;--gutter:0px}
+  	#keyboard > k-note k-legend {padding:0}
 </style>
 </head><body>
+<header>
 <h1>KeyMason</h1> /
 <h2>Demo</h2>
 <a href="https://github.com/miragecraft/keymason" style="margin-left:1ch;font-weight:bold">Github / Documentation</a>
@@ -70,7 +74,13 @@ $( document ).ready(function() {
 <strong>Selectable</strong>
 <label><input type="checkbox" name="selectable" value="" checked> Hover  Highlight</label>
 </div>
+</header>
 <div id="keyboard">
+
+<!-- Full Size Keyboard with Big Ass Enter -->
+<k-note style="--w:20">
+	<k-legend class="left">GMK Legend Alignment + LED Window + Icons + Big Enter</k-legend>
+</k-note>
 <k-row>
 	<k-cap class="mod"><k-legend class="small">Esc</k-legend></k-cap>
 
@@ -363,7 +373,13 @@ $( document ).ready(function() {
 </k-column>
 </k-row>
 
-<k-row style="--y:.5">
+<!-- 60% Keyboard with ISO Enter -->
+
+<k-note style="--w:20;--y:.5">
+	<k-legend class="left">More Icons + ISO Enter + Rotation</k-legend>
+</k-note>
+
+<k-row>
 <k-column>
 	<k-note><k-legend>R1</k-legend></k-note>
 	<k-note><k-legend>R2</k-legend></k-note>
@@ -566,6 +582,7 @@ $( document ).ready(function() {
 </k-row>
 </k-column>
 
+<!-- Atreus Layout -->
 
 <k-row style="--r:10; --x:1.5">
 <k-column style="--y:.5">
@@ -636,6 +653,284 @@ $( document ).ready(function() {
 	<k-cap class="mod"><k-legend><k-icon class="enter"></k-icon></k-legend></k-cap>
 </k-column>
 </k-row>
+</k-row>
+
+<!-- SA/DSA Key Legends -->
+
+<k-note style="--w:20;--y:.5">
+	<k-legend class="left">DSA/SA Legend Alignment</k-legend>
+</k-note>
+
+<k-row>
+	<k-cap class="mod"><k-legend class="small">Esc</k-legend></k-cap>
+
+	<k-cap  style="--x:1"><k-legend class="small">F1</k-legend></k-cap>
+	<k-cap><k-legend class="small">F2</k-legend></k-cap>
+	<k-cap><k-legend class="small">F3</k-legend></k-cap>
+	<k-cap><k-legend class="small">F4</k-legend></k-cap>
+
+	<k-cap class="mod" style="--x:.5"><k-legend class="small">F5</k-legend></k-cap>
+	<k-cap class="mod"><k-legend class="small">F6</k-legend></k-cap>
+	<k-cap class="mod"><k-legend class="small">F7</k-legend></k-cap>
+	<k-cap class="mod"><k-legend class="small">F8</k-legend></k-cap>
+
+	<k-cap  style="--x:.5"><k-legend class="small">F9</k-legend></k-cap>
+	<k-cap><k-legend class="small">F10</k-legend></k-cap>
+	<k-cap><k-legend class="small">F11</k-legend></k-cap>
+	<k-cap><k-legend class="small">F12</k-legend></k-cap>
+
+    <k-cap style="--x:.25" class="mod"><k-legend class="small center">PrtSc</k-legend></k-cap>
+	<k-cap class="mod"><k-legend class="small center">Scroll<br>Lock</k-legend><k-window></k-window></k-cap>
+	<k-cap class="mod"><k-legend class="small center">Pause</k-legend></k-cap>
+</k-row>
+
+<k-row style="--y:.5">
+<k-column>
+<k-row>
+	<k-cap>
+		<k-legend class="medium top">~</k-legend>
+		<k-legend class="medium bottom">`</k-legend>
+	</k-cap>
+	<k-cap>
+		<k-legend class="medium top">!</k-legend>
+		<k-legend class="medium bottom">1</k-legend>
+	</k-cap>
+	<k-cap>
+		<k-legend class="medium top">@</k-legend>
+		<k-legend class="medium bottom">2</k-legend>
+	</k-cap>
+	<k-cap>
+		<k-legend class="medium top">#</k-legend>
+		<k-legend class="medium bottom">3</k-legend>
+	</k-cap>
+	<k-cap>
+		<k-legend class="medium top">$</k-legend>
+		<k-legend class="medium bottom">4</k-legend>
+	</k-cap>
+	<k-cap>
+		<k-legend class="medium top">%</k-legend>
+		<k-legend class="medium bottom">5</k-legend>
+	</k-cap>
+	<k-cap>
+		<k-legend class="medium top">^</k-legend>
+		<k-legend class="medium bottom">6</k-legend>
+	</k-cap>
+	<k-cap>
+		<k-legend class="medium top">&</k-legend>
+		<k-legend class="medium bottom">7</k-legend>
+	</k-cap>
+	<k-cap>
+		<k-legend class="medium top">*</k-legend>
+		<k-legend class="medium bottom">8</k-legend>
+	</k-cap>
+	<k-cap>
+		<k-legend class="medium top">(</k-legend>
+		<k-legend class="medium bottom">9</k-legend>
+	</k-cap>
+	<k-cap>
+		<k-legend class="medium top">)</k-legend>
+		<k-legend class="medium bottom">0</k-legend>
+	</k-cap>
+	<k-cap>
+		<k-legend class="medium top">&ndash;</k-legend>
+		<k-legend class="medium bottom">-</k-legend>
+	</k-cap>
+	<k-cap>
+		<k-legend class="medium top">+</k-legend>
+		<k-legend class="medium bottom">=</k-legend>
+	</k-cap>
+	<k-cap class="mod" style="--w:2">
+		<k-legend class="small">Backspace</k-legend>
+	</k-cap>
+</k-row>
+<k-row>
+	<k-cap class="mod" style="--w:1.5">
+		<k-legend class="small">Tab</k-legend>
+	</k-cap>
+	<k-cap><k-legend class="center">Q</k-legend></k-cap>
+	<k-cap><k-legend class="center">W</k-legend></k-cap>
+	<k-cap><k-legend class="center">E</k-legend></k-cap>
+	<k-cap><k-legend class="center">R</k-legend></k-cap>
+	<k-cap><k-legend class="center">T</k-legend></k-cap>
+	<k-cap><k-legend class="center">Y</k-legend></k-cap>
+	<k-cap><k-legend class="center">U</k-legend></k-cap>
+	<k-cap><k-legend class="center">I</k-legend></k-cap>
+	<k-cap><k-legend class="center">O</k-legend></k-cap>
+	<k-cap><k-legend class="center">P</k-legend></k-cap>
+	<k-cap>
+		<k-legend class="medium top">{</k-legend>
+		<k-legend class="medium bottom">[</k-legend>
+	</k-cap>
+	<k-cap>
+		<k-legend class="medium top">}</k-legend>
+		<k-legend class="medium bottom">]</k-legend>
+	</k-cap>
+	<k-cap style="--w:1.5">
+		<k-legend class="medium top">|</k-legend>
+		<k-legend class="medium bottom">\</k-legend>
+	</k-cap>	
+</k-row>
+
+<k-row>
+	<k-cap class="mod 1.75">
+			<k-legend class="small">Caps Lock</k-legend>
+	</k-cap>
+	<k-cap>
+		<k-legend class="center">A</k-legend>
+	</k-cap>
+	<k-cap>
+		<k-legend class="center">S</k-legend>
+	</k-cap>
+	<k-cap>
+		<k-legend class="center">D</k-legend>
+	</k-cap>
+	<k-cap>
+		<k-legend class="center">F</k-legend>
+		<k-homing></k-homing>
+	</k-cap>
+	<k-cap><k-legend class="center">G</k-legend></k-cap>
+	<k-cap><k-legend class="center">H</k-legend></k-cap>
+	<k-cap>
+		<k-legend class="center">J</k-legend>
+		<k-homing></k-homing>
+	</k-cap>
+	<k-cap><k-legend class="center">K</k-legend></k-cap>
+	<k-cap><k-legend class="center">L</k-legend></k-cap>
+	<k-cap>
+		<k-legend class="medium top">:</k-legend>
+		<k-legend class="medium bottom">;</k-legend>
+	</k-cap>
+	<k-cap>
+		<k-legend class="medium top">"</k-legend>
+		<k-legend class="medium bottom">'</k-legend>
+	</k-cap>
+	<k-cap class="mod 2.25"><k-legend class="small">Enter</k-legend></k-cap>
+</k-row>
+
+<k-row>
+	<k-cap class="mod" style="--w:2.25">
+		<k-legend class="small">Shift</k-legend>
+	</k-cap>
+	<k-cap><k-legend class="center">Z</k-legend></k-cap>
+	<k-cap><k-legend class="center">X</k-legend></k-cap>
+	<k-cap><k-legend class="center">C</k-legend></k-cap>
+	<k-cap><k-legend class="center">V</k-legend></k-cap>
+	<k-cap><k-legend class="center">B</k-legend></k-cap>
+	<k-cap><k-legend class="center">N</k-legend></k-cap>
+	<k-cap><k-legend class="center">M</k-legend></k-cap>
+	<k-cap>
+		<k-legend class="medium top"><</k-legend>
+		<k-legend class="medium bottom">,</k-legend>
+	</k-cap>
+	<k-cap>
+		<k-legend class="medium top">></k-legend>
+		<k-legend class="medium bottom">.</k-legend>
+	</k-cap>
+	<k-cap>
+		<k-legend class="medium top">?</k-legend>
+		<k-legend class="medium bottom">/</k-legend>
+	</k-cap>
+	<k-cap class="mod" style="--w:2.75">
+		<k-legend class="small">Shift</k-legend>
+	</k-cap>
+</k-row>
+<k-row>
+	<k-cap class="mod" style="--w:1.5">
+		<k-legend class="small">Control</k-legend>
+	</k-cap>
+	<k-cap class="mod alt">
+		<k-legend class="small">Win</k-legend>
+	</k-cap>
+	<k-cap class="mod" style="--w:1.5">
+		<k-legend class="small">Alt</k-legend>
+	</k-cap>
+	<k-cap class="space" style="--w:7"></k-cap>
+	<k-cap class="mod" style="--w:1.5">
+		<k-legend class="small">Alt</k-legend>
+	</k-cap>
+	<k-cap class="mod alt">
+		<k-legend class="small">Menu</k-legend>
+	</k-cap>
+	<k-cap class="mod" style="--w:1.5">
+		<k-legend class="small">Control</k-legend>
+	</k-cap>
+</k-row>
+</k-column>
+<k-column style="--x:.25" class="mod">
+<k-row>
+	<k-cap>
+		<k-legend class="small center">Insert</k-legend>
+	</k-cap>
+	<k-cap>
+		<k-legend class="small center">Home</k-legend>
+	</k-cap>
+	<k-cap>
+		<k-legend class="small center">PgUp</k-legend>
+	</k-cap>
+</k-row>
+<k-row class="mod">
+	<k-cap>
+		<k-legend class="small center">Delete</k-legend>
+	</k-cap>
+	<k-cap>
+		<k-legend class="small">End</k-legend>
+	</k-cap>
+	<k-cap>
+		<k-legend class="small center">PgDn</k-legend>
+	</k-cap>
+</k-row>
+<k-row style="--x:1;--y:1">
+	<k-cap><k-legend class="center"><k-icon class="arrow up"></k-icon></k-legend></k-cap>
+</k-row>
+<k-row>
+	<k-cap><k-legend class="center"><k-icon class="arrow left"></k-icon></k-legend></k-cap>
+	<k-cap><k-legend class="center"><k-icon class="arrow down"></k-icon></k-legend></k-cap>
+	<k-cap><k-legend class="center"><k-icon class="arrow right"></k-icon></k-legend></k-cap>
+</k-row>
+</k-column>
+<k-column style="--x:.25">
+<k-row class="mod">
+	<k-cap><k-legend class="small">Num<br>Lock</k-legend></k-cap>
+	<k-cap><k-legend class="center">/</k-legend></k-cap>
+	<k-cap><k-legend class="center">*</k-legend></k-cap>
+	<k-cap><k-legend class="center">-</k-legend></k-cap>
+</k-row>
+<k-row>
+	<k-cap>
+		<k-legend class="center">7</k-legend>
+	</k-cap>
+	<k-cap>
+		<k-legend class="center">8</k-legend>
+	</k-cap>
+	<k-cap>
+		<k-legend class="center">9</k-legend>
+	</k-cap>
+	<k-cap class="mod tall">
+		<k-legend class="center">&#43;</k-legend></k-cap>
+</k-row>
+<k-row>
+	<k-cap>
+		<k-legend class="center">4</k-legend>
+	</k-cap>
+	<k-cap><k-legend class="center">5</k-legend><k-homing></k-homing></k-cap>
+	<k-cap>
+		<k-legend class="center">6</k-legend>
+	</k-cap>
+</k-row>
+<k-row>
+	<k-cap><k-legend class="center">1</k-legend></k-cap>
+	<k-cap><k-legend class="center">2</k-legend></k-cap>
+	<k-cap><k-legend class="center">3</k-legend></k-cap>
+	<k-cap class="mod tall"><k-legend class="small center">Enter</k-legend></k-cap>
+</k-row>
+<k-row>
+	<k-cap style="--w:2"><k-legend class="center">0</k-legend></k-cap>
+	<k-cap><k-legend class="center">.</k-legend></k-cap>
+</k-row>
+<k-row>
+
+</k-row>
+</k-column>
 </k-row>
 </div>
 </body></html>
