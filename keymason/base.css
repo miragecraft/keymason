@@ -1,50 +1,64 @@
 /*  KeyMason
     http://www.miragecraft.com
     Licensed under MIT Open Source */
+html {-webkit-text-size-adjust: 100%}
 
 /* default */
 :root {
-  --u: 60px;
-  --gutter: 3px;
-  --accent: 2px;
+  --u:        60px;
+  --gutter:   3px;
+  --accent:   2px;
   
   /* Cherry profile */
-  --b-top:4px;
-  --b-side:10px;
-  --b-bottom:10px;
-  --r-base: 2px;
-  --r-top: 4px;
+  --b-top:    4px;
+  --b-side:   10px;
+  --b-bottom: 10px;
+  --r-base:   2px;
+  --r-top:    4px;
+
+  /* legend size */
+
+  --l-large:  1.4rem;
+  --l-medium: 1rem;
+  --l-small:  .8rem;
 
   /* default colors */
-  --legend: #3e3e3e;
-  --base: #CDCDCD;
+  --legend:   #3e3e3e;
+  --base:     #CDCDCD;
   --lightest: #efe8e8;
-  --lighter: #dadada;
-  --dark: #bbbbbb; 
-  --darker: #AAA9AA;
-  --darkest: #9D9D9D;
-  --shadow: #474747;
+  --lighter:  #dadada;
+  --dark:     #bbbbbb; 
+  --darker:   #AAA9AA;
+  --darkest:  #9D9D9D;
+  --shadow:   #474747;
 }
 
+/* DSA and SA presets */
 .DSA {
-  --b-top:8px;
-  --b-side:10px;
-  --b-bottom:9px;
-  --r-base: 2px;
-  --r-top: 4px;
+  --b-top:    8px;
+  --b-side:   10px;
+  --b-bottom: 9px;
+  --r-base:   2px;
+  --r-top:    4px;
 }
 
 .SA {
-  --b-top:2px;
-  --b-side:10px;
-  --b-bottom:14px;
-  --r-base: 2px;
-  --r-top: 6px;
+  --b-top:    2px;
+  --b-side:   10px;
+  --b-bottom: 14px;
+  --r-base:   2px;
+  --r-top:    6px;
 }
 
-.DSA k-cap,.SA k-cap {font-family: Metro;}
+.DSA, .SA {
+  --l-large:  1.55rem;
+  --l-small:  .65rem;
+}
 
-/* blueprint */
+.DSA k-cap,.SA k-cap {font-family: Metro}
+.DSA k-legend,.SA k-legend {place-self:center;text-transform:uppercase;}
+
+/* blueprint mode */
 .blueprint {
   --legend:red;
   --shadow:var(--legend);
@@ -78,7 +92,7 @@
 
 k-row, k-column {display:flex;}
 k-column {flex-direction:column; vertical-align:top;}
-k-column, k-row, k-cap {
+k-column, k-row, k-cap, k-note {
   margin-top:calc(var(--u)*var(--y));
   margin-left:calc(var(--u)*var(--x));
   --x:0;--y:0;
@@ -130,17 +144,17 @@ k-column > k-cap {margin-right:calc((var(--u)*(var(--w, 1) - 1) + var(--gutter))
 
 /* Shorcuts to Sizing */
 [class~="1.25"] {--w:1.25}
-[class~="1.5"] {--w:1.5}
+[class~="1.5"]  {--w:1.5}
 [class~="1.75"] {--w:1.75}
-[class~="2"] {--w:2}
+[class~="2"]    {--w:2}
 [class~="2.25"] {--w:2.25}
 [class~="2.75"] {--w:2.75}
-[class~="3"] {--w:3}
-[class~="4"] {--w:4}
-[class~="5.5"] {--w:5.5}
+[class~="3"]    {--w:3}
+[class~="4"]    {--w:4}
+[class~="5.5"]  {--w:5.5}
 [class~="6.25"] {--w:6.25}
-[class~="7"] {--w:7}
-.tall {--h:2}
+[class~="7"]    {--w:7}
+.tall           {--h:2}
 
 k-cap:before, k-cap:after {content:""}
 
@@ -170,7 +184,7 @@ k-cap:after {
 
 k-legend {
   position:absolute;
-  font-size: 1.4rem;
+  font-size: var(--l-large);
   line-height:90%;
   grid-column: 2/3;
   grid-row: 2/3;
@@ -178,13 +192,16 @@ k-legend {
 }
 
 k-legend.medium {
-  font-size:1rem;
+  font-size: var(--l-medium);
   width:calc((var(--u) - var(--gutter) - var(--b-side)*2)/2);
   height:calc((var(--u) - var(--gutter) - var(--b-top) - var(--b-bottom))/2);
   display: flex; justify-content:center; align-items: center;
 }
 
-k-legend.small {font-size:.8rem; line-height:100%}
+k-legend.small {
+  font-size: var(--l-small);
+  line-height:100%
+}
 
 k-legend {
   place-self:center start;
@@ -211,6 +228,9 @@ k-icon {
   background:var(--legend);
 }
 k-icon:before {content:""; display:inline-block; width:var(--iw); padding-top:calc(var(--ih,1)*100%);}
+
+/* alternative icon method, extra i tag, flash on hover, no need to define height
+k-icon i {content:var(--icon);visibility:hidden; width:var(--iw)} */
 
 k-icon.tab {--icon:url(icons/tab.svg);--iw: 18px;--ih:0.5;}
 k-icon.tab:nth-of-type(2) {transform:scaleX(-1)}
