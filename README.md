@@ -92,7 +92,7 @@ Keycap is constructed of the following:
 ```
 <k-cap>
   <k-legend class="top left">Q</k-legend> <!-- repeat as necessary -->
-</k-cap
+</k-cap>
 ```
 
 For the `<k-cap>` element you can:
