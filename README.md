@@ -1,7 +1,7 @@
 # KeyMason
 CSS based keyset renderer, create attractive keyset mockups and layouts using just HTML and CSS.
 
-*Note: icons do not show up on iOS browsers due to relative path bug - relative path url() in custom property changes path base from CSS file to HTML file, I've decided I won't spend effort to accommodate a bug that will eventually get fixed.*
+*Note: iOS browsers relative path bug appears to have been fixed - relative path url() in custom property changes path base from CSS file to HTML file.*
 
 [See demo here](http://www.miragecraft.com/projects/keymason.html).
 
