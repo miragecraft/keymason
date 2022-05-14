@@ -43,7 +43,6 @@ html:before {
   display:block;
   font-weight:bold;
   content: "\02139  Adjust your zoom level to avoid pixel rounding errors";
-  "026A0""02139"
 }
 
 @media (resolution: 1dppx), (resolution: 2dppx), (resolution: 3dppx), (resolution: 4dppx) {
