@@ -240,7 +240,7 @@ You can create your own icon easily by simply drawing black outline, save as an 
 
 ### Selectable
 
-Add the `.seletable` class to an outer wrapper enable key highlighting on hover, can be used to build user interface.
+Add the `.selectable` class to an outer wrapper enable key highlighting on hover, can be used to build user interface.
 
 ### Blueprint
 
